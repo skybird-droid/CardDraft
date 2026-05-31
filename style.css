@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0a0f1f,
+        #111827
+    );
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 3rem;
+    text-shadow: 0 0 15px #00bfff;
+}
+
+.button-container {
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 40px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:first-child {
+    background: #4fc3f7;
+    color: black;
+}
+
+button:last-child {
+    background: #e53935;
+    color: white;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    width: 220px;
+    height: 320px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.05);
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.5);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.face-down {
+    background:
+        linear-gradient(
+            135deg,
+            #222,
+            #555
+        );
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.face-down::after {
+    content: "?";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.revealed {
+    background: transparent;
+}
+
+.common {
+    box-shadow:
+        0 0 10px #888,
+        0 0 20px #888;
+}
+
+.rare {
+    box-shadow:
+        0 0 10px #2196f3,
+        0 0 25px #2196f3,
+        0 0 40px #2196f3;
+}
+
+.epic {
+    box-shadow:
+        0 0 10px #9c27b0,
+        0 0 25px #9c27b0,
+        0 0 50px #9c27b0;
+}
+
+.legendary {
+    box-shadow:
+        0 0 10px #ffb300,
+        0 0 30px #ffb300,
+        0 0 60px #ff9800,
+        0 0 90px #ff5722;
+
+    animation: legendaryPulse 2s infinite;
+}
+
+@keyframes legendaryPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.character-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 10px 0;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+    box-sizing: border-box;
+}
